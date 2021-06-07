@@ -55,6 +55,7 @@ main() {
   fi
   fill_import_name_templates "$WORK_DIR"
 
+  ./scripts/util/find_and_patch_empty_classes.sh ${PACKAGE_NAME} ${WORK_DIR}
   ./scripts/util/postprocess.sh -p "${PACKAGE_NAME}" -w "$WORK_DIR"
   clean_openapi_generator_output "$WORK_DIR"
   move_generated_output "$WORK_DIR"
